@@ -1,0 +1,926 @@
+// Remember to update icons if you change these
+$SELECTION_MAIN:  #1e81cc;
+$LIGHT_MAIN: #CCCCCC;
+$DARK_MAIN: #444444;
+
+// ========================================================================== //
+// Generic
+
+QWidget {
+    background-color: $BACKGROUND_2;
+    color: $FOREGROUND_1;
+
+    // For alternating row color
+    alternate-background-color: $BACKGROUND_3; // TODO
+
+    selection-background-color: $SELECTION_2;
+    selection-color: $FOREGROUND_1;
+
+    &:disabled {
+        color: $FOREGROUND_DISABLED;
+    }
+
+}
+
+QListView::item,
+QTableView::item,
+QTreeView::item,
+QTreeView::branch {
+    &:selected {
+        &:active {
+            background-color: $SELECTION_1;
+        }
+        &:!active {
+            background-color: $SELECTION_INACTIVE;
+        }
+    }
+}
+
+QWidget {
+    background-color: $BACKGROUND_2;
+}
+// Containers
+QTabWidget .QWidget,
+QTabWidget .QFrame,
+QTabWidget .QSplitter,
+QTabWidget .QStackedWidget,
+QTabBar::tab:selected,
+QTabWidget::pane,
+QDial,
+QGroupBox {
+    background-color: $BACKGROUND_1;
+}
+
+// Interactables
+QPushButton,
+QActionButton,
+QTabBar::tab:!selected,
+QToolBox::tab:!selected,
+QComboBox:!editable,
+QComboBox::drop-down {
+    &:hover {
+        background-color: $BACKGROUND_1;
+    }
+}
+
+QTabBar::tab:selected,
+QGroupBox,
+QAbstractScrollArea {
+    border: 1px solid $BORDER_1;
+}
+
+
+QAbstractScrollArea,
+QMenu,
+QMenu::indicator {
+    background-color: $BACKGROUND_2;
+}
+
+QToolButton,
+QLineEdit,
+QTextEdit,
+QPlainTextEdit,
+QDockWidget,
+QTreeView,
+QListView,
+QColumnView,
+QDateEdit, 
+QDateTimeEdit,
+QGroupBox,
+QAbstractSpinBox,
+QDateEdit>QAbstractItemView, 
+QDateTimeEdit>QAbstractItemView,
+QToolBox {
+    background-color: $BACKGROUND_0;
+    border: 1px solid $BORDER_1;
+    
+    &:disabled {
+        color: $FOREGROUND_DISABLED;
+    }
+}
+
+
+QStatusBar,
+QDockWidget::title, {
+    background: $BACKGROUND_3;
+    border: 1px solid $BORDER_1;
+}
+
+QLabel,
+QCheckBox,
+QRadioButton,
+QSlider {
+    background-color: transparent;
+}
+
+
+QPushButton,
+QToolBox::tab {
+    background-color: $BACKGROUND_SURFACE;
+    border: 1px solid $BORDER_1;
+    &:selected{
+        background-color: $BACKGROUND_1;
+    }
+}
+
+QCheckBox, 
+QRadioButton, 
+QComboBox, 
+QLineEdit,
+QAbstractSpinBox {
+    padding: 3px 1px;
+}
+
+QGroupBox {
+    padding-top: 16px;
+}
+
+// ========================================================================== //
+// Buttons
+
+
+
+QPushButton, 
+QToolButton {
+    padding: 3px 1px;
+    &:checked{
+        background-color: $BACKGROUND_3;
+    }
+}
+
+QComboBox {
+    padding: 4px;
+    background-color: $BACKGROUND_0;
+    border: 1px solid $BORDER_1;
+    &:!editable {
+        background-color: $BACKGROUND_SURFACE;
+    }
+
+    &:disabled {
+        color: $FOREGROUND_DISABLED;
+    }
+
+    &::drop-down {
+        padding: 4px;
+        border: none;
+        &:editable {
+            background-color: $BACKGROUND_SURFACE;
+            border-left: 1px solid $BORDER_1;
+        }
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 16px;
+    }
+
+    
+  
+    &::drop-down {
+        padding: 4px;
+        border: none;
+        &:editable {
+            background-color: $BACKGROUND_SURFACE;
+            border-left: 1px solid $BORDER_1;
+        }
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 16px;
+    }
+    &::down-arrow {
+        height: 16px;
+        width: 16px;
+    }
+
+}
+
+QAbstractSpinBox {
+    &:up-button {
+        subcontrol-origin: border;
+        subcontrol-position: top right;
+    }
+
+    &:down-button {
+        subcontrol-origin: border;
+        subcontrol-position: bottom right;
+    }
+    &::up-arrow,
+    &::down-arrow {
+        height: 12px;
+        width: 12px;
+    }
+
+    &::up-button,
+    &::down-button {
+        
+        
+        width: 14px;
+        border: 1px solid $BORDER_1;
+        background-color: $BACKGROUND_SURFACE;
+    }
+}
+// ========================================================================== //
+// QTableView
+
+QTableView {
+    border: 1px solid $BORDER_1;
+    // This background is seen between cells so effectively is cell border color
+    background-color: $BORDER_2;
+    &::item{
+        padding: 5px;
+        border: none;
+        background-color: $BACKGROUND_0;
+    }
+}
+
+QAbstractScrollArea::corner {
+    background-color: $BACKGROUND_2;
+}
+
+QHeaderView {
+    border: none;
+    outline: none;
+    &::section {
+        border: 1px solid $BORDER_1;
+        outline: none;
+        padding: 2px 8px;
+        &:horizontal {
+            border-top-width: 0px;
+            border-left-width: 0px;
+            background-color: $BACKGROUND_SURFACE;
+        }
+        &:vertical {
+            border-top-width: 0px;
+            border-left-width: 0px;
+            background-color: $BACKGROUND_SURFACE;
+        }
+    }
+}
+
+// PandasGUI
+.DataTableView {
+    border: none;
+    &::item {
+        background-color: $BACKGROUND_0;
+    }
+
+}
+.HeaderView {
+    border: 0px solid $BORDER_1;
+    &[orientation="horizontal"]{
+        border-width: 1px 0px 0px 0px;
+    }
+    &[orientation="vertical"]{
+        border-width: 0px 0px 0px 1px;
+        
+    }
+    &::item {
+        background-color: qlineargradient(0, 1, 0, 0, (0 darken($BACKGROUND_0, 5), 1 $BACKGROUND_0));
+        &:selected {
+            &:active {
+                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_1, 5), 1 $SELECTION_1));
+            }
+            &:!active {
+                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_INACTIVE, 5), 1 $SELECTION_INACTIVE));
+            }
+        }
+    }
+}
+.CornerWidget {
+    border-right: 1px solid  $BORDER_1;
+}
+.HeaderNamesView {   
+    border: 0px solid $BORDER_1;
+    &[orientation="horizontal"]{ 
+        border-width: 1px 1px 1px 1px;
+    }
+    &[orientation="vertical"]{
+        border-width: 1px 0px 1px 1px;
+    }
+    &::item {
+        background-color: qlineargradient(0, 1, 0, 0, (0 darken($BACKGROUND_0, 5), 1 $BACKGROUND_0));
+        &:selected {
+            &:active {
+                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_1, 5), 1 $SELECTION_1));
+            }
+            &:!active {
+                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_INACTIVE, 5), 1 $SELECTION_INACTIVE));
+            }
+        }
+    }
+}
+
+// ========================================================================== //
+// QScrollBar
+
+QScrollBar {
+    // https://stackoverflow.com/a/17935692
+    &::add-page, &::sub-page {
+        background-color: transparent;
+    }
+    
+    background-color: transparent;
+    border: 1px solid $BORDER_1;
+    border-radius: 8px;
+
+
+    &::handle {
+        background-color: $FOREGROUND_3;
+        &:hover{
+            background-color: $SELECTION_MAIN;
+        }
+        
+        &:disabled{background-color: $FOREGROUND_DISABLED;}
+        
+        border-radius: 4px;
+        margin: 3px;
+        &:vertical {
+            min-height: 40px;
+        }
+        &:horizontal {
+            min-width: 40px;
+        }
+    }
+    
+    &:horizontal {
+        height: 16px;
+        margin: 0px 16px;
+    }
+
+    &:vertical {
+        width: 16px;
+        margin: 16px 0px;
+    }
+
+    &::add-line {
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        &:horizontal {
+            height: 16px;
+            width: 16px;
+            subcontrol-position: right;
+            subcontrol-origin: margin;
+        }
+
+        &:vertical {
+            height: 16px;
+            width: 16px;
+            subcontrol-position: bottom;
+            subcontrol-origin: margin;
+        }
+    }
+
+    &::sub-line {
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        &:horizontal {
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_left.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_left.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_left.svg');
+            }
+            height: 16px;
+            width: 16px;
+            subcontrol-position: left;
+            subcontrol-origin: margin;
+        }
+
+        &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_up.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_up.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_up.svg');
+            }
+            height: 16px;
+            width: 16px;
+            subcontrol-position: top;
+            subcontrol-origin: margin;
+        }
+    }
+}
+
+// ========================================================================== //
+// QSlider
+
+QSlider {
+    &::handle {
+        background: $FOREGROUND_3;
+        border: $BORDER_1;
+        &:hover {
+            background: $SELECTION_MAIN;
+            border: $SELECTION_MAIN;
+        }
+        &:disabled{background-color: $FOREGROUND_DISABLED;}
+
+        &:horizontal {
+            width: 8px;
+            height: 8px;
+            margin: -8px 0px;
+            border-radius: 2px;
+        }
+
+        &:vertical {
+            width: 8px;
+            height: 8px;
+            margin: 0 -8px;
+            border-radius: 2px;
+        }
+    }
+    &::groove {
+        background: $BACKGROUND_3;
+        border: $BORDER_1;
+
+        &:horizontal {
+            height: 4px;
+            margin: 0px;
+            border-radius: 2px;
+        }
+
+        &:vertical {
+            width: 4px;
+            margin: 0px;
+            border-radius: 2px;
+        }
+    }
+
+    &::add-page {
+        &:vertical {
+            background: $SELECTION_MAIN;
+            &:disabled{background-color: $FOREGROUND_DISABLED;}
+            border: $BORDER_1;
+            width: 4px;
+            margin: 0px;
+            border-radius: 2px;
+        }
+    }
+
+    &::sub-page {
+        &:horizontal {
+            background: $SELECTION_MAIN;
+            &:disabled{background-color: $FOREGROUND_DISABLED;}
+            border: $BORDER_1;
+            height: 4px;
+            margin: 0px;
+            border-radius: 2px;
+
+        }
+    }
+}
+// ========================================================================== //
+// QTabWidget
+
+QTabWidget {
+    &::pane {
+        border: 1px solid $BORDER_1;
+        padding: 1px;
+        &:top { 
+            // Hide border between tab and pane (https://stackoverflow.com/a/10047229/3620725)
+            top: -1px; 
+            // No rounding where edge tab meets pane
+            border-top-left-radius: 0px;
+        }
+        &:bottom { 
+            bottom: -1px; 
+            border-bottom-left-radius: 0px;
+        }
+        &:left { 
+            left: -1px; 
+            border-top-left-radius: 0px;
+        }
+        &:right { 
+            border-top-right-radius: 0px;
+            right: -1px; 
+        }
+    }
+}
+
+QTabBar {
+    qproperty-drawBase: 0;
+    &::tab {
+        &:!selected {
+            // Gradient creates appearance of shadow being cast by pane onto tabs
+            background-color: qlineargradient(0, 1, 0, 0, (0.0 rgba(0,0,0,0.05), 0.25 $BACKGROUND_2));
+            border: 1px solid $BORDER_1;
+            margin-top: 2px;
+            
+            &:!last{
+                border-right-color: transparent;
+            }
+            &:last{
+                border-right-width: 1px;
+            
+            }&:previous-selected{
+                border-left-color: transparent;
+            }
+        }
+
+        &:top,
+        &:bottom {
+            padding: 6px 16px;
+        }
+
+        &:left,
+        &:right {
+            padding: 16px 6px;
+        }
+
+        &:top {
+            &:selected { border-bottom-width: 0px; }
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        &:bottom {
+            &:selected { border-top-width: 0px; }
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+        &:left {
+            &:selected { border-right-width: 0px; }
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        &:right {
+            &:selected { border-left-width: 0px; }
+            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
+        }
+    }
+}
+// ========================================================================== //
+// QDockWidget
+
+QDockWidget {
+    titlebar-close-icon: url(':/resources/' + $ICON_COLOR + '/close.svg');
+    titlebar-normal-icon: url(':/resources/' + $ICON_COLOR + '/window_undock.svg');
+
+    &::title {
+        /* Better size for title bar */
+        padding: 8px;
+        border: 1px solid $BORDER_1;
+        background-color: $BACKGROUND_1;
+    }
+
+    &::close-button {
+        subcontrol-position: top right;
+        subcontrol-origin: margin;
+        position: absolute;
+        top: 0px; right: 4px; bottom: 0px;
+        width: 14px;
+        icon-size: 14px;
+        &:hover {
+            image: url(':/resources/selected/close.svg');
+        }
+    }
+
+    &::float-button {
+        subcontrol-position: top right;
+        subcontrol-origin: margin;
+        position: absolute;
+        top: 0px; right: 24px; bottom: 0px;
+        width: 14px;
+        icon-size: 14px;
+        &:hover {
+            image: url(':/resources/selected/close.svg');
+        }
+    }
+    
+}
+
+
+// ========================================================================== //
+// QToolBox
+
+QToolBox {
+    &::tab {
+        &:selected {
+            font-weight: bold;
+        }
+    }
+}
+
+
+// ========================================================================== //
+// QMainMenu
+QStatusBar {
+    border: 0px solid;
+    padding: 0px;
+
+    /* Fixes #205, white vertical borders separating items */
+    &::item {
+        border: none;
+    }
+
+
+    QLabel {
+        /* Fixes Spyder #9120, #9121 */
+        background: transparent;
+    }
+}
+QStatusBar {
+    QWidget {
+        background: transparent;
+    }
+    /* Removes white vertical borders separating items */
+    &::item {
+        border: none;
+    }
+}
+
+// ========================================================================== //
+// Misc
+
+QMenuBar {
+    border-bottom: 1px solid $BORDER_2;
+}
+
+QMenu {
+    border: 1px solid $BORDER_1;
+    background-color: $BACKGROUND_2;
+
+    &::item{
+        &:selected {
+            background-color: $SELECTION_2;
+        }
+    }
+    &::indicator {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        &:selected {
+            background-color: $SELECTION_2;
+        }
+
+    }
+
+}
+// ========================================================================== //
+// Rounded Edges
+QToolButton,
+QComboBox,
+QLineEdit,
+QTextEdit,
+QPlainTextEdit,
+QTabWidget::pane,
+QTabBar::tab,
+QDockWidget,
+QToolBox,
+QDateEdit, 
+QDateTimeEdit,
+QGroupBox,
+QDateEdit>QAbstractItemView, 
+QDateTimeEdit>QAbstractItemView,
+.QWidget {
+    border-radius: $SIZE_BORDER_RADIUS;
+}
+
+// ========================================================================== //
+// Icons
+QMenu::right-arrow {
+    image: url(':/resources/' + $ICON_COLOR + '/arrow_right.svg');
+    &:hover {
+        image: url(':/resources/selected/arrow_right.svg');
+    }
+    &:disabled {
+        image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_right.svg');
+    }
+}
+QScrollBar {
+    &::add-line {
+        &:horizontal {
+            
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_right.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_right.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_right.svg');
+            }
+            icon-size: 32px;
+        }
+
+        &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_down.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_down.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_down.svg');
+            }
+            icon-size: 32px;
+        }
+    }
+
+    &::sub-line {
+        &:horizontal {
+        }
+
+        &:vertical {
+        }
+    }
+}
+QSizeGrip {
+    width: 12px;
+    height: 12px;
+    image: url(':/resources/' + $ICON_COLOR + '/window_grip.svg');
+}
+QToolBar {
+    &::handle {
+        &:horizontal {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_move_horizontal.svg');
+        }
+        &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_move_vertical.svg');
+        }
+    }
+
+    &::separator {
+
+        &:horizontal {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_separator_horizontal.svg');
+        }
+
+        &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_separator_vertical.svg');
+        }
+    }
+}
+QAbstractSpinBox {
+    &::up-arrow {
+        image: url(':/resources/' + $ICON_COLOR + '/arrow_up.svg');
+        &:hover {
+            image: url(':/resources/selected/arrow_up.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_up.svg');
+        }
+    }
+    &::down-arrow {
+        image: url(':/resources/' + $ICON_COLOR + '/arrow_down.svg');
+        &:hover {
+            image: url(':/resources/selected/arrow_down.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_down.svg');
+        }
+    }
+}
+QComboBox {
+    &::down-arrow {
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_down.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_down.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_down.svg');
+            }
+    }
+}
+QTabBar {
+
+    &::close-button {
+        padding: 5px;
+        image: url(':/resources/' + $ICON_COLOR + '/close.svg');
+        &:hover {
+            image: url(':/resources/selected/close.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/close.svg');
+        }
+    }
+
+    
+}
+
+
+
+QTreeView {
+    &:branch {
+        &:has-siblings:!adjoins-item {
+            border-image: url(':/resources/' + $ICON_COLOR + '/branch_line.svg');
+        }
+
+        &:has-siblings:adjoins-item {
+            border-image: url(':/resources/' + $ICON_COLOR + '/branch_more.svg');
+
+        }
+
+        &:!has-children:!has-siblings:adjoins-item {
+            border-image: url(':/resources/' + $ICON_COLOR + '/branch_end.svg');
+        }
+
+        &:has-children:!has-siblings:closed,
+        &:closed:has-children:has-siblings {
+            border-image: none;
+            image: url(':/resources/' + $ICON_COLOR + '/branch_closed.svg');
+            &:hover {
+                image: url(':/resources/selected/branch_closed.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/branch_closed.svg');
+            }
+        }
+
+        &:open:has-children:!has-siblings,
+        &:open:has-children:has-siblings {
+            border-image: none;
+            image: url(':/resources/' + $ICON_COLOR + '/branch_open.svg');
+            &:hover {
+                image: url(':/resources/selected/branch_open.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/branch_open.svg');
+            }
+            icon-size: 32px;
+        }
+
+    }
+}
+QHeaderView {
+    &::down-arrow {
+        image: url(':/resources/' + $ICON_COLOR + '/arrow_down.svg');
+        &:hover {
+            image: url(':/resources/selected/arrow_down.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_down.svg');
+        }
+    }
+
+    &::up-arrow {
+        image: url(':/resources/' + $ICON_COLOR + '/arrow_up.svg');
+        &:hover {
+            image: url(':/resources/selected/arrow_up.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_up.svg');
+        }
+    }
+}
+QAbstractItemView::indicator,
+QCheckBox::indicator, 
+QGroupBox::indicator,
+QMenu::indicator:non-exclusive {    
+    width: 16px;
+    height: 16px;
+
+    &:unchecked {
+        image: url(':/resources/' + $ICON_COLOR + '/checkbox_unchecked.svg');
+        &:hover {
+            image: url(':/resources/selected/checkbox_unchecked.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/checkbox_unchecked.svg');
+        }
+    }
+
+    &:checked {
+        image: url(':/resources/' + $ICON_COLOR + '/checkbox_checked.svg');
+        &:hover {
+            image: url(':/resources/selected/checkbox_checked.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/checkbox_checked.svg');
+        }
+    }
+
+    &:indeterminate {
+        image: url(':/resources/' + $ICON_COLOR + '/checkbox_indeterminate.svg');
+        &:hover {
+            image: url(':/resources/selected/checkbox_indeterminate.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/checkbox_indeterminate.svg');
+        }
+    }
+}
+
+QRadioButton::indicator,
+QMenu::indicator:exclusive {
+    width: 16px;
+    height: 16px;
+
+    &:unchecked {
+        image: url(':/resources/' + $ICON_COLOR + '/radio_unchecked.svg');
+        &:hover {
+            image: url(':/resources/selected/radio_unchecked.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/radio_unchecked.svg');
+        }
+    }
+
+    &:checked {
+        image: url(':/resources/' + $ICON_COLOR + '/radio_checked.svg');
+        &:hover {
+            image: url(':/resources/selected/radio_checked.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/radio_checked.svg');
+        }
+    }
+    
+}
