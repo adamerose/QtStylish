@@ -656,6 +656,13 @@ QMenu {
 
     }
 
+    &::separator {
+        height: 1px;
+        background: $FOREGROUND_3;
+        margin: 5px;
+    }
+    
+
 }
 // ========================================================================== //
 // Rounded Edges
@@ -728,23 +735,23 @@ QSizeGrip {
     image: url(':/resources/' + $ICON_COLOR + '/window_grip.svg');
 }
 QToolBar {
-    &::handle {
-        &:horizontal {
-            image: url(':/resources/' + $ICON_COLOR + '/toolbar_move_horizontal.svg');
-        }
-        &:vertical {
-            image: url(':/resources/' + $ICON_COLOR + '/toolbar_move_vertical.svg');
-        }
-    }
-
     &::separator {
-
         &:horizontal {
             image: url(':/resources/' + $ICON_COLOR + '/toolbar_separator_horizontal.svg');
         }
 
         &:vertical {
             image: url(':/resources/' + $ICON_COLOR + '/toolbar_separator_vertical.svg');
+        }
+    }
+
+    &::separator {
+        &:horizontal {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_move_horizontal.svg');
+        }
+
+        &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_move_vertical.svg');
         }
     }
 }

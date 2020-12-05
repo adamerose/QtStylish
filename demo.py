@@ -47,6 +47,7 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
 
     example = DemoWidget()
+    example.setStyle(QtWidgets.QStyleFactory.create("Fusion"))
     switcher = ThemeSwitcher(example)
 
     switcher.resize(1000, 700)

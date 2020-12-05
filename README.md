@@ -9,10 +9,10 @@ This package provides a modern light and dark theme for PyQt5. I made this becau
 ![Light](screenshots/light.png)
 
 # Usage
-
 - Copy `qstylish.py` and the `compiled` folder into your project and access the light and dark stylesheets like below.
 ```
 import qstylish
+my_widget.setStyle(QtWidgets.QStyleFactory.create("Fusion"))
 my_widget.setStyleSheet(qstylish.light())
 ```
 
