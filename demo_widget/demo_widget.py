@@ -3,6 +3,9 @@ from PyQt5.QtCore import Qt
 
 from PyQt5.QtWidgets import *
 
+from pandasgui import show
+from pandasgui.datasets import small, pokemon
+
 class DemoWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
@@ -877,6 +880,8 @@ class DemoWidget(QtWidgets.QWidget):
         #########################
         # Temp
 
+        self.gui = show(small, pokemon, settings={'block':False})
+        self.tabs.addTab(self.gui, "PandasGUI")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])

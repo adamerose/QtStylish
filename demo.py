@@ -4,6 +4,7 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 import os
 import qstylish
 
+
 sys.path.insert(0, os.path.abspath(
     os.path.dirname(os.path.abspath(__file__)) + '/..'))
 

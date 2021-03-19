@@ -27,13 +27,18 @@ QTableView::item,
 QTreeView::item,
 QTreeView::branch {
     &:selected {
+        
         &:active {
-            background-color: $SELECTION_1;
+            background-color: $SELECTION_2;
         }
         &:!active {
-            background-color: $SELECTION_INACTIVE;
+            background-color: $SELECTION_2;
         }
     }
+}
+
+QTreeView::item{
+    padding: 0 15px 0 0; 
 }
 
 QWidget {
@@ -221,11 +226,14 @@ QAbstractSpinBox {
 // QTableView
 
 QTableView {
-    border: 1px solid $BORDER_1;
+    border: 1px solid $BORDER_3;
     // This background is seen between cells so effectively is cell border color
-    background-color: $BORDER_2;
+    background-color: $BORDER_3;
+    &:selected {
+        background-color: $BACKGROUND_0;
+    }
     &::item{
-        padding: 5px;
+        padding: 0px;
         border: none;
         background-color: $BACKGROUND_0;
     }
@@ -239,7 +247,7 @@ QHeaderView {
     border: none;
     outline: none;
     &::section {
-        border: 1px solid $BORDER_1;
+        border: 1px solid $BORDER_3;
         outline: none;
         padding: 2px 8px;
         &:horizontal {
@@ -275,11 +283,12 @@ QHeaderView {
     &::item {
         background-color: qlineargradient(0, 1, 0, 0, (0 darken($BACKGROUND_0, 5), 1 $BACKGROUND_0));
         &:selected {
+            
             &:active {
-                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_1, 5), 1 $SELECTION_1));
+                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_2, 7), 1 $SELECTION_2));
             }
             &:!active {
-                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_INACTIVE, 5), 1 $SELECTION_INACTIVE));
+                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_2, 7), 1 $SELECTION_2));
             }
         }
     }
@@ -293,13 +302,13 @@ QHeaderView {
         border-width: 1px 1px 1px 1px;
     }
     &[orientation="vertical"]{
-        border-width: 1px 0px 1px 1px;
+        border-width: 1px 0px 0px 1px;
     }
     &::item {
         background-color: qlineargradient(0, 1, 0, 0, (0 darken($BACKGROUND_0, 5), 1 $BACKGROUND_0));
         &:selected {
             &:active {
-                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_1, 5), 1 $SELECTION_1));
+                background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_2, 5), 1 $SELECTION_2));
             }
             &:!active {
                 background-color: qlineargradient(0, 1, 0, 0, (0 darken($SELECTION_INACTIVE, 5), 1 $SELECTION_INACTIVE));
@@ -319,51 +328,51 @@ QScrollBar {
     
     background-color: transparent;
     border: 1px solid $BORDER_1;
-    border-radius: 8px;
+    border-radius: 0px;
 
-
+    $MAIN_SIZE: 20px;
     &::handle {
-        background-color: $FOREGROUND_3;
+        background-color: $FOREGROUND_4;
         &:hover{
-            background-color: $SELECTION_MAIN;
+            background-color: $FOREGROUND_3;
         }
         
         &:disabled{background-color: $FOREGROUND_DISABLED;}
         
-        border-radius: 4px;
-        margin: 3px;
+        border-radius: 2px;
+        margin: 2px;
         &:vertical {
-            min-height: 40px;
+            min-height: 60px;
         }
         &:horizontal {
-            min-width: 40px;
+            min-width: 60px;
         }
     }
     
     &:horizontal {
-        height: 16px;
-        margin: 0px 16px;
+        height: $MAIN_SIZE;
+        margin: 0px 20px;
     }
 
     &:vertical {
-        width: 16px;
-        margin: 16px 0px;
+        width: $MAIN_SIZE;
+        margin: $MAIN_SIZE 0px;
     }
 
     &::add-line {
         margin: 0;
-        border: none;
+        border: 1px solid $BORDER_1;
         background-color: transparent;
         &:horizontal {
-            height: 16px;
-            width: 16px;
+            height: $MAIN_SIZE - 2px;
+            width: $MAIN_SIZE - 2px;
             subcontrol-position: right;
             subcontrol-origin: margin;
         }
 
         &:vertical {
-            height: 16px;
-            width: 16px;
+            height: $MAIN_SIZE - 2px;
+            width: $MAIN_SIZE - 2px;
             subcontrol-position: bottom;
             subcontrol-origin: margin;
         }
@@ -371,32 +380,18 @@ QScrollBar {
 
     &::sub-line {
         margin: 0;
-        border: none;
+        border: 1px solid $BORDER_1;
         background-color: transparent;
         &:horizontal {
-            image: url(':/resources/' + $ICON_COLOR + '/arrow_left.svg');
-            &:hover {
-                image: url(':/resources/selected/arrow_left.svg');
-            }
-            &:disabled {
-                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_left.svg');
-            }
-            height: 16px;
-            width: 16px;
+            height: $MAIN_SIZE - 2px;
+            width: $MAIN_SIZE - 2px;
             subcontrol-position: left;
             subcontrol-origin: margin;
         }
 
         &:vertical {
-            image: url(':/resources/' + $ICON_COLOR + '/arrow_up.svg');
-            &:hover {
-                image: url(':/resources/selected/arrow_up.svg');
-            }
-            &:disabled {
-                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_up.svg');
-            }
-            height: 16px;
-            width: 16px;
+            height: $MAIN_SIZE - 2px;
+            width: $MAIN_SIZE - 2px;
             subcontrol-position: top;
             subcontrol-origin: margin;
         }
@@ -503,7 +498,7 @@ QTabBar {
     &::tab {
         &:!selected {
             // Gradient creates appearance of shadow being cast by pane onto tabs
-            background-color: qlineargradient(0, 1, 0, 0, (0.0 rgba(0,0,0,0.05), 0.25 $BACKGROUND_2));
+            background-color: qlineargradient(0, 1, 0, 0, (0.0 darken($BACKGROUND_3, 5), 0.25 $BACKGROUND_3));
             border: 1px solid $BORDER_1;
             margin-top: 2px;
             
@@ -664,6 +659,21 @@ QMenu {
     
 
 }
+
+QSplitter{
+    &::handle {
+    }
+
+    &::handle:horizontal {
+        width: 3px;
+    }
+    
+    &::handle:vertical {
+        height: 3px;
+    }
+}
+
+
 // ========================================================================== //
 // Rounded Edges
 QToolButton,
@@ -723,9 +733,26 @@ QScrollBar {
 
     &::sub-line {
         &:horizontal {
+            
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_left.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_left.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_left.svg');
+            }
+            icon-size: 32px;
         }
 
         &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_up.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_up.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_up.svg');
+            }
+            icon-size: 32px;
         }
     }
 }
