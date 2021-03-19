@@ -27,13 +27,8 @@ QTableView::item,
 QTreeView::item,
 QTreeView::branch {
     &:selected {
-        
-        &:active {
-            background-color: $SELECTION_2;
-        }
-        &:!active {
-            background-color: $SELECTION_2;
-        }
+        background-color: $SELECTION_2;
+
     }
 }
 
@@ -264,13 +259,7 @@ QHeaderView {
 }
 
 // PandasGUI
-.DataTableView {
-    border: none;
-    &::item {
-        background-color: $BACKGROUND_0;
-    }
 
-}
 .HeaderView {
     border: 0px solid $BORDER_1;
     &[orientation="horizontal"]{
