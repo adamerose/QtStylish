@@ -28,7 +28,6 @@ QTreeView::item,
 QTreeView::branch {
     &:selected {
         background-color: $SELECTION_2;
-
     }
 }
 
@@ -222,16 +221,8 @@ QAbstractSpinBox {
 
 QTableView {
     border: 1px solid $BORDER_3;
-    // This background is seen between cells so effectively is cell border color
-    background-color: $BORDER_3;
-    &:selected {
-        background-color: $BACKGROUND_0;
-    }
-    &::item{
-        padding: 0px;
-        border: none;
-        background-color: $BACKGROUND_0;
-    }
+    background-color: $BACKGROUND_0;
+
 }
 
 QAbstractScrollArea::corner {

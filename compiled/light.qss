@@ -2,7 +2,7 @@ QWidget {
   background-color: #f0f0f0;
   color: #000;
   alternate-background-color: #e0e0e0;
-  selection-background-color: #bcdaf5;
+  selection-background-color: #89c2f5;
   selection-color: #000; }
   QWidget:disabled {
     color: #d9d9d9; }
@@ -11,7 +11,7 @@ QListView::item:selected,
 QTableView::item:selected,
 QTreeView::item:selected,
 QTreeView::branch:selected {
-  background-color: #bcdaf5; }
+  background-color: #89c2f5; }
 
 QTreeView::item {
   padding: 0 15px 0 0; }
@@ -166,13 +166,7 @@ QAbstractSpinBox::up-button, QAbstractSpinBox::down-button {
 
 QTableView {
   border: 1px solid #f0f0f0;
-  background-color: #f0f0f0; }
-  QTableView:selected {
-    background-color: #ffffff; }
-  QTableView::item {
-    padding: 0px;
-    border: none;
-    background-color: #ffffff; }
+  background-color: #ffffff; }
 
 QAbstractScrollArea::corner {
   background-color: #f0f0f0; }
@@ -202,9 +196,9 @@ QHeaderView {
   .HeaderView::item {
     background-color: qlineargradient(x1: 0.0, y1: 1.0, x2: 0.0, y2: 0.0, stop: 0.0 rgba(242, 242, 242, 100%), stop: 1.0 rgba(255, 255, 255, 100%)); }
     .HeaderView::item:selected:active {
-      background-color: qlineargradient(x1: 0.0, y1: 1.0, x2: 0.0, y2: 0.0, stop: 0.0 rgba(156, 200, 240, 100%), stop: 1.0 rgba(188, 218, 245, 100%)); }
+      background-color: qlineargradient(x1: 0.0, y1: 1.0, x2: 0.0, y2: 0.0, stop: 0.0 rgba(104, 176, 242, 100%), stop: 1.0 rgba(137, 194, 245, 100%)); }
     .HeaderView::item:selected:!active {
-      background-color: qlineargradient(x1: 0.0, y1: 1.0, x2: 0.0, y2: 0.0, stop: 0.0 rgba(156, 200, 240, 100%), stop: 1.0 rgba(188, 218, 245, 100%)); }
+      background-color: qlineargradient(x1: 0.0, y1: 1.0, x2: 0.0, y2: 0.0, stop: 0.0 rgba(104, 176, 242, 100%), stop: 1.0 rgba(137, 194, 245, 100%)); }
 
 .CornerWidget {
   border-right: 1px solid #b3b3b3; }
@@ -218,7 +212,7 @@ QHeaderView {
   .HeaderNamesView::item {
     background-color: qlineargradient(x1: 0.0, y1: 1.0, x2: 0.0, y2: 0.0, stop: 0.0 rgba(242, 242, 242, 100%), stop: 1.0 rgba(255, 255, 255, 100%)); }
     .HeaderNamesView::item:selected:active {
-      background-color: qlineargradient(x1: 0.0, y1: 1.0, x2: 0.0, y2: 0.0, stop: 0.0 rgba(165, 205, 241, 100%), stop: 1.0 rgba(188, 218, 245, 100%)); }
+      background-color: qlineargradient(x1: 0.0, y1: 1.0, x2: 0.0, y2: 0.0, stop: 0.0 rgba(113, 181, 243, 100%), stop: 1.0 rgba(137, 194, 245, 100%)); }
     .HeaderNamesView::item:selected:!active {
       background-color: qlineargradient(x1: 0.0, y1: 1.0, x2: 0.0, y2: 0.0, stop: 0.0 rgba(225, 225, 225, 100%), stop: 1.0 rgba(238, 238, 238, 100%)); }
 
@@ -435,13 +429,13 @@ QMenu {
   border: 1px solid #b3b3b3;
   background-color: #f0f0f0; }
   QMenu::item:selected {
-    background-color: #bcdaf5; }
+    background-color: #89c2f5; }
   QMenu::indicator {
     border: none;
     outline: none;
     background-color: transparent; }
     QMenu::indicator:selected {
-      background-color: #bcdaf5; }
+      background-color: #89c2f5; }
   QMenu::separator {
     height: 1px;
     background: #a6a6a6;

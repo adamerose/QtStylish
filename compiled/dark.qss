@@ -166,13 +166,7 @@ QAbstractSpinBox::up-button, QAbstractSpinBox::down-button {
 
 QTableView {
   border: 1px solid rgba(55, 58, 63, 0.4);
-  background-color: rgba(55, 58, 63, 0.4); }
-  QTableView:selected {
-    background-color: #242629; }
-  QTableView::item {
-    padding: 0px;
-    border: none;
-    background-color: #242629; }
+  background-color: #242629; }
 
 QAbstractScrollArea::corner {
   background-color: #373a3f; }
