@@ -1,3 +1,17 @@
 __pycache__
 *.pyc
 .idea
+
+# Python
+__pycache__
+*.pyc
+
+# IDE
+.idea
+.vscode
+
+# PyPI
+dist/
+*.egg-info
+.eggs
+pypi.sh

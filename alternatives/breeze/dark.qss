@@ -1,3 +1,0 @@
-QTabBar::tab {
-    border-color: black;
-}
