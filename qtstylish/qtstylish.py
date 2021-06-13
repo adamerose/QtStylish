@@ -49,22 +49,27 @@ def compile():
 
 
 class ThemeSwitcher(QtWidgets.QWidget):
-    def __init__(self, widget_to_style, hot_reload=False):
+    def __init__(self, contents, widget_to_style=None, hot_reload=False):
         super().__init__()
+
+        if widget_to_style is None:
+            self.widget_to_style = self
+        else:
+            self.widget_to_style = widget_to_style
 
         layout = QtWidgets.QVBoxLayout()
         btn_layout = QtWidgets.QHBoxLayout()
 
         btn = QtWidgets.QPushButton("Unstyled")
-        btn.clicked.connect(lambda: self.setStyleSheet(""))
+        btn.clicked.connect(lambda: self.widget_to_style.setStyleSheet(""))
         btn_layout.addWidget(btn)
 
         btn = QtWidgets.QPushButton("Light")
-        btn.clicked.connect(lambda: self.setStyleSheet(qtstylish.light(hot_reload=hot_reload)))
+        btn.clicked.connect(lambda: self.widget_to_style.setStyleSheet(qtstylish.light(hot_reload=hot_reload)))
         btn_layout.addWidget(btn)
 
         btn = QtWidgets.QPushButton("Dark")
-        btn.clicked.connect(lambda: self.setStyleSheet(qtstylish.dark(hot_reload=hot_reload)))
+        btn.clicked.connect(lambda: self.widget_to_style.setStyleSheet(qtstylish.dark(hot_reload=hot_reload)))
         btn_layout.addWidget(btn)
 
         ##################
@@ -78,9 +83,9 @@ class ThemeSwitcher(QtWidgets.QWidget):
         layout.addLayout(theme_btn_layout)
 
         layout.addLayout(btn_layout)
-        layout.addWidget(widget_to_style)
+        layout.addWidget(contents)
         self.setLayout(layout)
-        self.show()
+
 
 if __name__ == "__main__":
     compile()
