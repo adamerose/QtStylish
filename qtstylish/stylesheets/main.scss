@@ -102,6 +102,12 @@ QComboBox::drop-down {
     }
 }
 
+QPushButton {
+    &:checked,
+    &:pressed {
+        background-color: $BACKGROUND_3;
+    }
+}
 QTabBar::tab:selected,
 QGroupBox,
 QAbstractScrollArea {

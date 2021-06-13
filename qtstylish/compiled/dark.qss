@@ -66,6 +66,9 @@ QComboBox:!editable:hover,
 QComboBox::drop-down:hover {
   background-color: #292b2e; }
 
+QPushButton:checked, QPushButton:pressed {
+  background-color: #4a4e54; }
+
 QTabBar::tab:selected,
 QGroupBox,
 QAbstractScrollArea {
