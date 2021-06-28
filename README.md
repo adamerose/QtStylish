@@ -18,11 +18,8 @@ pip install qtstylish
 
 # Usage
 
-- Copy `qtstylish.py` and the `compiled` folder into your project and access the light and dark stylesheets like below.
-
 ```
 import qtstylish
-my_widget.setStyle(QtWidgets.QStyleFactory.create("Fusion"))
 my_widget.setStyleSheet(qtstylish.light())
 ```
 
