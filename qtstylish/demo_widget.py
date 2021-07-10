@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import *
 
 try:
     from pandasgui import show
-    from pandasgui.datasets import small, pokemon
+    from pandasgui.datasets import pokemon, mi_manufacturing
 except:
     pass
 
@@ -889,7 +889,7 @@ class DemoWidget(QtWidgets.QWidget):
         # Temp
 
         try:
-            self.gui = show(small, pokemon, settings={'block':False, 'theme':'classic'})
+            self.gui = show(pokemon, mi_manufacturing, settings={'block':False, 'theme':'classic'})
             self.tabs.addTab(self.gui, "PandasGUI")
         except:
             pass
