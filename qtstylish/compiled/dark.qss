@@ -400,6 +400,9 @@ QTableCornerButton::section {
 .CornerWidget {
   border: 1px solid rgba(136, 141, 149, 0.5); }
 
+.DataTableView {
+  border: none; }
+
 .HeaderNamesView {
   border: 0px solid rgba(136, 141, 149, 0.5); }
   .HeaderNamesView[orientation="horizontal"] {

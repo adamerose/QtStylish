@@ -274,6 +274,10 @@ QTableCornerButton::section {
     border: 1px solid  $BORDER_1;
 }
 
+.DataTableView {
+    border: none;
+}
+
 .HeaderNamesView {   
     border: 0px solid $BORDER_1;
     &[orientation="horizontal"]{ 
