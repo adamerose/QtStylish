@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf8") as fh:
 
 setup(
     name="qtstylish",
-    version="0.1.1",
+    version="0.1.2",
     description="Modern styles for PyQt5.",
     author="Adam Rose",
     author_email="adam.e.rose@hotmail.com",
