@@ -1,0 +1,269 @@
+// Remember to update icons if you change these
+$SELECTION_MAIN:  #1e81cc;
+$LIGHT_MAIN: #CCCCCC;
+$DARK_MAIN: #444444;
+
+// ========================================================================== //
+// Icons
+QMenu::right-arrow {
+    image: url(':/resources/' + $ICON_COLOR + '/arrow_right.svg');
+    &:hover {
+        image: url(':/resources/selected/arrow_right.svg');
+    }
+    &:disabled {
+        image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_right.svg');
+    }
+}
+QScrollBar {
+    &::add-line {
+        &:horizontal {
+            
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_right.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_right.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_right.svg');
+            }
+            icon-size: 32px;
+        }
+
+        &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_down.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_down.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_down.svg');
+            }
+            icon-size: 32px;
+        }
+    }
+
+    &::sub-line {
+        &:horizontal {
+            
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_left.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_left.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_left.svg');
+            }
+            icon-size: 32px;
+        }
+
+        &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_up.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_up.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_up.svg');
+            }
+            icon-size: 32px;
+        }
+    }
+}
+QSizeGrip {
+    width: 12px;
+    height: 12px;
+    image: url(':/resources/' + $ICON_COLOR + '/window_grip.svg');
+}
+QToolBar {
+    &::separator {
+        &:horizontal {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_separator_horizontal.svg');
+        }
+
+        &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_separator_vertical.svg');
+        }
+    }
+
+    &::separator {
+        &:horizontal {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_move_horizontal.svg');
+        }
+
+        &:vertical {
+            image: url(':/resources/' + $ICON_COLOR + '/toolbar_move_vertical.svg');
+        }
+    }
+}
+QAbstractSpinBox {
+    &::up-arrow {
+        image: url(':/resources/' + $ICON_COLOR + '/arrow_up.svg');
+        &:hover {
+            image: url(':/resources/selected/arrow_up.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_up.svg');
+        }
+    }
+    &::down-arrow {
+        image: url(':/resources/' + $ICON_COLOR + '/arrow_down.svg');
+        &:hover {
+            image: url(':/resources/selected/arrow_down.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_down.svg');
+        }
+    }
+}
+QComboBox {
+    &::down-arrow {
+            image: url(':/resources/' + $ICON_COLOR + '/arrow_down.svg');
+            &:hover {
+                image: url(':/resources/selected/arrow_down.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_down.svg');
+            }
+    }
+}
+QTabBar {
+
+    &::close-button {
+        padding: 5px;
+        image: url(':/resources/' + $ICON_COLOR + '/close.svg');
+        &:hover {
+            image: url(':/resources/selected/close.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/close.svg');
+        }
+    }
+
+    
+}
+
+
+
+QTreeView {
+    &:branch {
+        &:has-siblings:!adjoins-item {
+            border-image: url(':/resources/' + $ICON_COLOR + '/branch_line.svg');
+        }
+
+        &:has-siblings:adjoins-item {
+            border-image: url(':/resources/' + $ICON_COLOR + '/branch_more.svg');
+
+        }
+
+        &:!has-children:!has-siblings:adjoins-item {
+            border-image: url(':/resources/' + $ICON_COLOR + '/branch_end.svg');
+        }
+
+        &:has-children:!has-siblings:closed,
+        &:closed:has-children:has-siblings {
+            border-image: none;
+            image: url(':/resources/' + $ICON_COLOR + '/branch_closed.svg');
+            &:hover {
+                image: url(':/resources/selected/branch_closed.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/branch_closed.svg');
+            }
+        }
+
+        &:open:has-children:!has-siblings,
+        &:open:has-children:has-siblings {
+            border-image: none;
+            image: url(':/resources/' + $ICON_COLOR + '/branch_open.svg');
+            &:hover {
+                image: url(':/resources/selected/branch_open.svg');
+            }
+            &:disabled {
+                image: url(':/resources/' + $DISABLED_ICON_COLOR + '/branch_open.svg');
+            }
+            icon-size: 32px;
+        }
+
+    }
+}
+QHeaderView {
+    &::down-arrow {
+        image: url(':/resources/' + $ICON_COLOR + '/arrow_down.svg');
+        &:hover {
+            image: url(':/resources/selected/arrow_down.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_down.svg');
+        }
+    }
+
+    &::up-arrow {
+        image: url(':/resources/' + $ICON_COLOR + '/arrow_up.svg');
+        &:hover {
+            image: url(':/resources/selected/arrow_up.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/arrow_up.svg');
+        }
+    }
+}
+QAbstractItemView::indicator,
+QCheckBox::indicator, 
+QGroupBox::indicator,
+QMenu::indicator:non-exclusive {    
+    width: 16px;
+    height: 16px;
+
+    &:unchecked {
+        image: url(':/resources/' + $ICON_COLOR + '/checkbox_unchecked.svg');
+        &:hover {
+            image: url(':/resources/selected/checkbox_unchecked.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/checkbox_unchecked.svg');
+        }
+    }
+
+    &:checked {
+        image: url(':/resources/' + $ICON_COLOR + '/checkbox_checked.svg');
+        &:hover {
+            image: url(':/resources/selected/checkbox_checked.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/checkbox_checked.svg');
+        }
+    }
+
+    &:indeterminate {
+        image: url(':/resources/' + $ICON_COLOR + '/checkbox_indeterminate.svg');
+        &:hover {
+            image: url(':/resources/selected/checkbox_indeterminate.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/checkbox_indeterminate.svg');
+        }
+    }
+}
+
+QRadioButton::indicator,
+QMenu::indicator:exclusive {
+    width: 16px;
+    height: 16px;
+
+    &:unchecked {
+        image: url(':/resources/' + $ICON_COLOR + '/radio_unchecked.svg');
+        &:hover {
+            image: url(':/resources/selected/radio_unchecked.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/radio_unchecked.svg');
+        }
+    }
+
+    &:checked {
+        image: url(':/resources/' + $ICON_COLOR + '/radio_checked.svg');
+        &:hover {
+            image: url(':/resources/selected/radio_checked.svg');
+        }
+        &:disabled {
+            image: url(':/resources/' + $DISABLED_ICON_COLOR + '/radio_checked.svg');
+        }
+    }
+    
+}

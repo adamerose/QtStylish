@@ -1,6 +1,6 @@
 import math
 from PIL import Image
-from demo_widget.demo_widget import DemoWidget
+from qtstylish.demo_widget import DemoWidget
 import sys
 import os
 from PyQt5 import QtWidgets, QtGui, QtCore

@@ -22,7 +22,7 @@ QWidget {
 
 }
 
-QHeaderView,
+QHeaderView::item,
 // PandasGUI
 .HeaderNamesView::item,
 .HeaderView::item {
@@ -64,7 +64,7 @@ QHeaderView,
 }
 
 QTreeView::item{
-    padding: 0 15px 0 0; 
+    padding: 0 0 0 0; 
 }
 
 QWidget {
@@ -81,6 +81,7 @@ QTabWidget::pane,
 QDial,
 QGroupBox {
     background-color: $BACKGROUND_1;
+
 }
 
 // Interactables
@@ -164,13 +165,16 @@ QToolBox::tab {
 QCheckBox, 
 QRadioButton, 
 QComboBox, 
-QLineEdit,
 QAbstractSpinBox {
     padding: 3px 1px;
 }
 
 QGroupBox {
     padding-top: 16px;
+    &:title{
+        top: 6px;
+        left: 6px;
+    }
 }
 
 // ========================================================================== //
@@ -257,7 +261,7 @@ QAbstractSpinBox {
 // ========================================================================== //
 // QTableView
 
-QTableView {
+QTableView, QTreeView {
     border: 1px solid $BORDER_3;
     background-color: $BACKGROUND_0;
 
@@ -604,19 +608,20 @@ QMenu {
         margin: 5px;
     }
     
-
 }
 
-QSplitter{
+QSplitter {   
     &::handle {
-    }
+        height: 12px;
+        width: 12px;
+    }     
 
     &::handle:horizontal {
-        width: 3px;
+        image: url(':/resources/' + $ICON_COLOR + '/toolbar_separator_vertical.svg');       
     }
     
     &::handle:vertical {
-        height: 3px;
+        image: url(':/resources/' + $ICON_COLOR + '/toolbar_separator_horizontal.svg');
     }
 }
 

@@ -752,11 +752,16 @@ class DemoWidget(QtWidgets.QWidget):
 
         row += 1
         # QListWidget
+        widgets_layout.addWidget(QLabel("QTreeWidget"), row, 0)
+
         x = QListWidget()
         x.setEnabled(True)
         for a in range(10):
             x.addItem(f"Item-{a}")
         x.itemAt(0, 0).setCheckState(Qt.Checked)
+        for index in range(x.count()):
+            item = x.item(index)
+            item.setFlags(item.flags() | QtCore.Qt.ItemIsEditable)
         widgets_layout.addWidget(x, row, 1)
 
         x = QListWidget()
