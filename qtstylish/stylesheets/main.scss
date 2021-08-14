@@ -4,11 +4,11 @@
 // Generic
 
 QWidget {
-    background-color: $BACKGROUND_2;
+    background-color: $BACKGROUND_1;
     color: $FOREGROUND_1;
 
     // For alternating row color
-    alternate-background-color: $BACKGROUND_3; // TODO
+    alternate-background-color: $BACKGROUND_2;
 
     selection-color: $FOREGROUND_1;
     
@@ -25,7 +25,7 @@ QWidget {
 }
 
 QWidget {
-    background-color: $BACKGROUND_2;
+    background-color: $BACKGROUND_3;
 }
 
 // Containers
@@ -63,7 +63,7 @@ QComboBox::drop-down {
 QPushButton {
     &:checked,
     &:pressed {
-        background-color: $BACKGROUND_3;
+        background-color: $BACKGROUND_4;
     }
 }
 QTabBar::tab:selected,
@@ -76,7 +76,7 @@ QAbstractScrollArea {
 QAbstractScrollArea,
 QMenu,
 QMenu::indicator {
-    background-color: $BACKGROUND_2;
+    background-color: $BACKGROUND_3;
 }
 
 QToolButton,
@@ -105,7 +105,7 @@ QToolBox {
 
 QStatusBar,
 QDockWidget::title, {
-    background: $BACKGROUND_3;
+    background: $BACKGROUND_4;
     border: 1px solid $BORDER_1;
 }
 
@@ -142,7 +142,7 @@ QGroupBox {
 QPushButton, 
 QToolButton {
     &:checked{
-        background-color: $BACKGROUND_3;
+        background-color: $BACKGROUND_4;
     }
 }
 
@@ -224,7 +224,7 @@ QTableView, QTreeView, QListView {
 }
 
 QAbstractScrollArea::corner {
-    background-color: $BACKGROUND_2;
+    background-color: $BACKGROUND_3;
 }
 
 QHeaderView {
@@ -413,7 +413,7 @@ QSlider {
         }
     }
     &::groove {
-        background: $BACKGROUND_3;
+        background: $BACKGROUND_4;
         border: $BORDER_1;
 
         &:horizontal {
@@ -485,7 +485,7 @@ QTabBar {
     &::tab {
         &:!selected {
             // Gradient creates appearance of shadow being cast by pane onto tabs
-            background-color: qlineargradient(0, 1, 0, 0, (0.0 darken($BACKGROUND_3, 5), 0.25 $BACKGROUND_3));
+            background-color: qlineargradient(0, 1, 0, 0, (0.0 darken($BACKGROUND_4, 5), 0.25 $BACKGROUND_4));
             border: 1px solid $BORDER_1;
             margin-top: 2px;
             
@@ -618,7 +618,7 @@ QMenuBar {
 
 QMenu {
     border: 1px solid $BORDER_1;
-    background-color: $BACKGROUND_2;
+    background-color: $BACKGROUND_3;
 
     &::item{
         &:selected {

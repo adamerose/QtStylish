@@ -199,9 +199,9 @@ QMenu::indicator:exclusive {
       image: url(":/resources/dark/radio_checked.svg"); }
 
 QWidget {
-  background-color: #393c41;
+  background-color: #2b2d30;
   color: #e5e5e5;
-  alternate-background-color: #4c5056;
+  alternate-background-color: #2e3034;
   selection-color: #e5e5e5; }
   QWidget:active {
     selection-background-color: #0f456e; }

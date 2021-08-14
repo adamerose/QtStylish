@@ -9,6 +9,7 @@ try:
 except:
     pass
 
+
 class DemoWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
@@ -699,6 +700,7 @@ class DemoWidget(QtWidgets.QWidget):
         widgets_layout.addWidget(QLabel("QTableWidget"), row, 0)
 
         x = QTableWidget()
+        x.setAlternatingRowColors(True)
         x.setEnabled(True)
         x.setSortingEnabled(True)
         x.setRowCount(20)
@@ -712,6 +714,7 @@ class DemoWidget(QtWidgets.QWidget):
         widgets_layout.addWidget(x, row, 1)
 
         x = QTableWidget()
+        x.setAlternatingRowColors(True)
         x.setEnabled(False)
         x.setSortingEnabled(True)
         x.setRowCount(20)
@@ -889,11 +892,13 @@ class DemoWidget(QtWidgets.QWidget):
         # Temp
 
         try:
-            self.gui = show(pokemon, mi_manufacturing, settings={'block':False, 'theme':'classic'})
+            self.gui = show(pokemon, mi_manufacturing, settings={
+                            'block': False, 'theme': 'classic'})
             self.tabs.addTab(self.gui, "PandasGUI")
         except:
             pass
-        
+
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     example = DemoWidget()
